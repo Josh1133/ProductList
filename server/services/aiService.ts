@@ -29,7 +29,13 @@ export const getTaskSuggestions = async (keyword: string): Promise<string[]> => 
     const suggestions = response.data.choices.map((choice: any) => choice.text.trim());
     return suggestions;
   } catch (error) {
+    // This is in place because my OpenAi limit has been reached so it returns nothing so this is back up
+    const suggestions = {
+      "study": ["Study JavaScript", "Review TypeScript", "Read React docs"],
+      "workout": ["Go to the gym", "Do yoga", "Run 5km"],
+      "shopping": ["Buy groceries", "Get new clothes", "Order online"]
+    };
     console.error("Error fetching task suggestions:", error);
-    return ["No suggestions available"];
+    return suggestions[keyword.toLowerCase()] || ["No suggestions available"];
   }
 };
