@@ -21,4 +21,9 @@
    `
    cd ../client  
    npm start
-   `
+   `  
+
+**If you are experiencing an issue connecting to the server from the client try changeeing the port for the server as MAC seems to run some processes on default ports**  
+files to change are  
+client/src/services/taskService.ts  
+server/app.ts
