@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { ITask } from '../types';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'http://localhost:5001/api';
 
 export const fetchTasks = () => axios.get<ITask[]>(`${API_URL}/tasks`);
 export const createTask = (title: string, description: string) => 
