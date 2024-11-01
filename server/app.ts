@@ -12,6 +12,9 @@ app.use(express.json());
 app.use('/api', taskRoutes);
 console.log(process.env.MONGO_URI)
 
+
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => app.listen(5001, () => console.log('Server started on port 5000')))
+  .then(() => app.listen(5001, () => console.log('Server started on port 5001')))
   .catch(err => console.log(err));
+
+  export default app;

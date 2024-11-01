@@ -1,7 +1,7 @@
 // models/Task.ts
 import mongoose, { Schema, Document } from 'mongoose';
 
-interface ITask extends Document {
+export interface ITask extends Document {
   title: string;
   description?: string;
   completed: boolean;
