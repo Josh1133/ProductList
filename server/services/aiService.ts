@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-const OPENAI_API_URL = 'https://api.openai.com/v1/completions';
+const OPENAI_API_URL = process.env.OPENAI_API_URL;
 
 export const getTaskSuggestions = async (keyword: string): Promise<string[]> => {
   if (!OPENAI_API_KEY) throw new Error("OpenAI API key is missing");
